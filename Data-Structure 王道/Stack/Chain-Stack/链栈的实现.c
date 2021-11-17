@@ -6,55 +6,71 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-typedef struct LinkNode {
+typedef struct LinkNode
+{
     int data;
     struct LinkNode *next;
 } LinkNode, *LiStack;
 
-void InitLNode(LiStack *DP) {
+void InitLNode(LiStack *DP)
+{
     *DP = NULL;
 }
 
-bool StackEmpty(LiStack P) {
+bool StackEmpty(LiStack P)
+{
     if (P == NULL)
         return true;
     else
         return false;
 }
 
-void Push(LiStack *DP, int num) {
+void Push(LiStack *DP, int num)
+{
     LinkNode *S = (LinkNode *)malloc(sizeof(LinkNode));
-    if (StackEmpty(*DP) == true) {
+    if (StackEmpty(*DP) == true)
+    {
         (*DP) = S;
-        S -> data = num;
-        S -> next = NULL;
-    } else {
-        S -> next = (*DP);
+        S->data = num;
+        S->next = NULL;
+    }
+    else
+    {
+        S->next = (*DP);
         (*DP) = S;
-        S -> data = num;
+        S->data = num;
     }
 }
 
-void Pop(LiStack *DP, int *P_num) {
-    if (StackEmpty(*DP) == true) {
+void Pop(LiStack *DP, int *P_num)
+{
+    if (StackEmpty(*DP) == true)
+    {
         printf("空栈\n");
-    } else {
+    }
+    else
+    {
         LinkNode *Q = (*DP);
-        (*P_num) = Q -> data;
-        (*DP) = Q-> next;
+        (*P_num) = Q->data;
+        (*DP) = Q->next;
         free(Q);
     }
 }
 
-void GetTop(LiStack P) {
-    if (StackEmpty(P) == true) {
+void GetTop(LiStack P)
+{
+    if (StackEmpty(P) == true)
+    {
         printf("空栈,无栈顶\n");
-    } else {
-        printf("栈顶的值为:%d\n", P -> data);
+    }
+    else
+    {
+        printf("栈顶的值为:%d\n", P->data);
     }
 }
 
-int main() {
+int main()
+{
     int num;
     printf("请输入Num的值:");
     scanf("%d", &num);

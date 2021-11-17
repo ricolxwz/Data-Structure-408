@@ -7,45 +7,51 @@
 
 #define Maxsize 10
 
-typedef struct {
+typedef struct
+{
     int data[Maxsize];
     int top; // ??????
 } SqStack;
 
-
-void InitStack(SqStack *S) {
+void InitStack(SqStack *S)
+{
     (*S).top = -1; // ???????????-1
 }
 
-bool StackEmpty(SqStack S) {
+bool StackEmpty(SqStack S)
+{
     if (S.top == -1)
         return true;
     else
         return false;
 }
 
-bool Push(SqStack *S, int num) {
+bool Push(SqStack *S, int num)
+{
     if ((*S).top == Maxsize - 1) //???????
         return false;
     (*S).data[++((*S).top)] = num; // ???????????,???num????data
     return true;
 }
 
-bool Pop(SqStack *S, int *num) {
+bool Pop(SqStack *S, int *num)
+{
     if ((*S).top == -1) // ??????
         return false;
     *num = (*S).data[((*S).top)--]; // ?????????????????num,???????????
     return true;
 }
 
-bool GetTop(SqStack S, int *num) {
+bool GetTop(SqStack S, int *num)
+{
     if (S.top == -1) // ??????
         return false;
     *num = S.data[S.top];
     return true;
 }
 
-int main() {
+int main()
+{
     SqStack S;
     int num;
     InitStack(&S);

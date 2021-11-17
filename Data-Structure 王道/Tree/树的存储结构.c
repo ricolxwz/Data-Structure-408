@@ -1,32 +1,38 @@
 #define MAX_TREE_SIZE 100
-typedef struct {
+typedef struct
+{
     int data;
-    int parent; // Ë«Ç×µÄÎ»ÖÃÓò
+    int parent; // Ë«ï¿½×µï¿½Î»ï¿½ï¿½ï¿½ï¿½
 } PTNode;
 
-typedef struct {
+typedef struct
+{
     PTNode nodes[MAX_TREE_SIZE];
-    int n; // ½áµãÊý
+    int n; // ï¿½ï¿½ï¿½ï¿½ï¿½
 } PTree;
 
 #define MAX_TREE_SIZE 100
 
-struct CTNode {
-    int child; // º¢×Ó½áµãÔÚÊý×éÖÐµÄÎ»ÖÃ
-    struct CTNode* next; // ÏÂÒ»¸öº¢×ÓµÄµØÖ·
+struct CTNode
+{
+    int child;           // ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Î»ï¿½ï¿½
+    struct CTNode *next; // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄµï¿½Ö·
 }
 
-typedef struct {
+typedef struct
+{
     int data;
-    struct CTNode* firstChild; // µÚÒ»¸öº¢×Ó
+    struct CTNode *firstChild; // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 } CTBox;
 
-typedef struct {
+typedef struct
+{
     CTBox nodes[MAX_TREE_SIZE];
-    int n, r; // ½áµãÊýºÍ¸ùµÄÎ»ÖÃ
+    int n, r; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 } CTree;
 
-typedef struct CSNode {
-    int data; // Êý¾ÝÓò
-    struct CSNode* firstchild, * nextsibling; // µÚÒ»¸öº¢×ÓºÍÓÒÐÖµÜÖ¸Õë
-} CSNode, * CSTree;
+typedef struct CSNode
+{
+    int data;                                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    struct CSNode *firstchild, *nextsibling; // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½ï¿½Öµï¿½Ö¸ï¿½ï¿½
+} CSNode, *CSTree;
