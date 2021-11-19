@@ -19,3 +19,17 @@ void BFS(Graph G, int v) // 从顶点v出发, 广度优先遍历图G
             }
     }
 }
+/*
+    算法存在的问题：
+        对于非连通图, 则无法遍历完所有的结点
+*/
+
+void BFSTraverse(Graph G) // 对图G进行广度优先遍历
+{
+    for (i = 0; i < G.vexnu; i++)
+        visited[i] = FALSE;        // 访问标记数组初始化
+    InitQueue(Q);                  //初始化辅助队列Q
+    for (i = 0; i < G.vexnum; i++) // 从0号顶点开始遍历
+        if (!visited[i])           // 对每个连通分量调用一次BFS
+            BFS(G, i);             // vi未访问过, 从vi开始BFS
+}
