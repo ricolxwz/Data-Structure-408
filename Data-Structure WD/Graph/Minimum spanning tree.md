@@ -16,4 +16,13 @@
 2. Kruskal算法
 时间复杂度: O(|E|log2|E|), 适用于边稀疏图
 ### Prim算法的实现思想
-![avatar](https://github.com/Ricolxwz/Data-Structure/blob/main/IMG/Prim%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95.png)
+1. 循环遍历所有个结点, 找到lowCast最低的, 且还没加入树的顶点
+   ![avatar](https://github.com/Ricolxwz/Data-Structure/blob/main/IMG/Graph/Prim%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%80%9D%E6%83%B31.png)
+2. 再次循环遍历, 更新还没加入各个顶点的lowCast值(就是更新lowCast数组)
+   ![avatar](https://github.com/Ricolxwz/Data-Structure/blob/main/IMG/Graph/Prim%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%80%9D%E6%83%B32.png)
+
+从V0开始, 总共需要n-1轮处理.(因为有n-1个结点需要加入到生成树中) 每一轮遍历的过程中, 循环遍历所有结点, 找到lowCast最低的, 且还没有入树的顶点. 再次循环遍历, 更新还没有加入的各个顶点的lowCast值. 每一轮的时间复杂度是O(2n). 总的时间复杂度为O(n^2), 即O(|V|^2)
+### Kruskal算法的实现思想
+1. 第一轮: 检查第一条边的两个顶点是否连通(是否属于同一个集合), 如果是属于同一个集合, 那么无法连接.
+   ![avatar](https://github.com/Ricolxwz/Data-Structure/blob/main/IMG/Graph/Kruskal%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%80%9D%E6%83%B31.png)
+2. 
