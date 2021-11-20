@@ -15,3 +15,5 @@
 时间复杂度: O(|V|^2), 适用于边稠密图
 2. Kruskal算法
 时间复杂度: O(|E|log2|E|), 适用于边稀疏图
+### Prim算法的实现思想
+![avatar](https://github.com/Ricolxwz/Data-Structure/blob/main/IMG/Prim%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95.png)
