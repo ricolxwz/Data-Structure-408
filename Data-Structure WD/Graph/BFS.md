@@ -1,5 +1,5 @@
 ## BFS
-### ~~要点~~
+### 要点
 1. 找到与一个顶点相邻的所有顶点
    - `FirstNeighbor(G, x)`
    - `NextNeighbor(G, x, y)`
