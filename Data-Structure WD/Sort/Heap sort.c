@@ -29,3 +29,14 @@ void HeadAdjust(int A[], int k, int len)
     }
     A[k] = A[0]; // 被筛选结点的值放入最终的位置
 }
+
+// 堆排序的完整逻辑
+void HeapSort(int A[], int len)
+{
+    BuildMaxHeap(A, len);         // 初始化堆
+    for (int i = len; i > 1; i--) // 第n-1趟的交换和建堆的过程
+    {
+        swap(A[i], A[1]);        // 堆顶元素和堆底元素交换
+        HeadAdjust(A, 1, i - 1); // 把剩余的待排序元素整理成堆
+    }
+}
