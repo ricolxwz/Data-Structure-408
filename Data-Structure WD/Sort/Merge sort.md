@@ -47,4 +47,24 @@ void Merge(int A[], int low, int mid, int high)
         A[k++] = B[j++];
     }
 }
+
+void MergeSort(int A[], int low, int high)
+{
+    if (low < high)
+    {
+        int mid = (low + high);      // 从中间划分
+        MergeSort(A, low, mid);      // 对左半部分归并排序
+        MergeSort(A, mid + 1, high); // 对右半部分归并排序
+        Merge(A, low, mid, high);    // 归并
+    }
+}
 ```
+
+### 算法效率分析
+
+- 2路归并的归并树, 在形态上就是一棵倒立的二叉树
+- 二叉树的第h层最多有2^(h-1)个结点; 若树高为h, 则应满足n≤2^(h-1), 即h-1=⌈log2n⌉
+- n个元素进行2路归并排序, 归并趟数=⌈log2n⌉
+- 每趟归并时间复杂度为O(n), 则算法时间复杂度为O(nlog2n)
+- 空间复杂度: O(n), 来自于辅助数组B
+- 稳定性: 稳定

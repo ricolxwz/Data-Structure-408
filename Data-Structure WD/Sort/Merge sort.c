@@ -28,3 +28,14 @@ void Merge(int A[], int low, int mid, int high)
         A[k++] = B[j++];
     }
 }
+
+void MergeSort(int A[], int low, int high)
+{
+    if (low < high)
+    {
+        int mid = (low + high);      // 从中间划分
+        MergeSort(A, low, mid);      // 对左半部分归并排序
+        MergeSort(A, mid + 1, high); // 对右半部分归并排序
+        Merge(A, low, mid, high);    // 归并
+    }
+}
